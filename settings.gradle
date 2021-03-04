@@ -1,4 +1,2 @@
-include ':sdk'
 include ':app'
-project(':sdk').projectDir = new File(rootDir, 'opencv-4.5.1-android-sdk/OpenCV-android-sdk/sdk/')
 rootProject.name = "Tracking"
