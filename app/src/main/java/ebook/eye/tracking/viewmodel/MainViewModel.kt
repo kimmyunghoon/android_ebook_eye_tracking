@@ -22,10 +22,6 @@ class MainViewModel :ViewModel() {
 
     }
     fun initDir(path: String){
-
-
-        val tests = File(path)
-
         if(File(path).isDirectory){
             Log.e("info", "$path$ 현재 경로는 디렉토리")
         }
