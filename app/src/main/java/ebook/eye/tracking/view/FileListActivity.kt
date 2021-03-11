@@ -36,6 +36,7 @@ class FileListActivity : AppCompatActivity() {
             binding.listView.adapter = adapterFileList
         }
         binding.listView.layoutManager = LinearLayoutManager(this)
+        viewmodel.adpter = adapterFileList
         val dataObserver: Observer<ArrayList<Directory>> =
             Observer { livedata ->
                 var data = MutableLiveData<ArrayList<Directory>>()

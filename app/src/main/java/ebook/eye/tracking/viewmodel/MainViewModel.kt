@@ -72,9 +72,6 @@ class MainViewModel :ViewModel() {
         val nextIntent = Intent(context, FileListActivity::class.java)
         nextIntent.putExtra("data",sb.toString())
         context.startActivity(nextIntent)
-
-//        TODO("메인 리스트 페이지로 이동하기전 선택한 파일들을 저장하는 과정을 거쳐야함")
-//        TODO("다음페이지로 이동 구현")
     }
 
 

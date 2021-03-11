@@ -38,6 +38,7 @@ class FileListRecyclerAdapter() : RecyclerView.Adapter<FileListRecyclerAdapter.M
 
                 holder.cb.isChecked = item.isChecked
                 holder.cb.setOnClickListener {
+
                     item.isChecked = !item.isChecked
                 }
                 holder.name.text = item.name
