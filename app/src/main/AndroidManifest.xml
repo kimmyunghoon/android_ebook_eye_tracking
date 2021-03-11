@@ -32,7 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.FileActivity" android:screenOrientation="portrait">
 
+        </activity>
+        <activity android:name=".view.FileListActivity" android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

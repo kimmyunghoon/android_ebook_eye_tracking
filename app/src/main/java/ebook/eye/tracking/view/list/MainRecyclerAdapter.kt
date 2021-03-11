@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import ebook.eye.tracking.R
 import ebook.eye.tracking.model.Directory
 
-class RecyclerAdapter() : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
+class MainRecyclerAdapter() : RecyclerView.Adapter<MainRecyclerAdapter.MyViewHolder>() {
 
     var data: LiveData<ArrayList<Directory>>? =null
 
     inner class MyViewHolder constructor(v: View) : RecyclerView.ViewHolder(v) {
         var cb:CheckBox = v.findViewById(R.id.checkBox)
-
+        var name:TextView = v.findViewById(R.id.name)
         var path:TextView = v.findViewById(R.id.dir_path)
     }
 
@@ -35,14 +35,21 @@ class RecyclerAdapter() : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         data?.value!![position].let { item ->
             with(holder) {
-                Log.e("test", item.toString())
+
                 holder.cb.isChecked = item.isChecked
                 holder.cb.setOnClickListener {
                     item.isChecked = !item.isChecked
                 }
+                holder.name.text = item.name
+                holder.name.setOnClickListener {
+
+                    holder.cb.isChecked = !holder.cb.isChecked
+                    item.isChecked = !item.isChecked
+                }
                 holder.path.text = item.dir_path
                 holder.path.setOnClickListener {
-
+                    holder.cb.isChecked = !holder.cb.isChecked
+                    item.isChecked = !item.isChecked
                 }
             }
         }

@@ -4,10 +4,10 @@
     <data>
         <variable
             name="mainvm"
-            type="ebook.eye.tracking.viewmodel.MainViewModel" />
+            type="ebook.eye.tracking.viewmodel.FileListViewModel" />
         <variable
             name="activity"
-            type="ebook.eye.tracking.view.MainActivity" />
+            type="ebook.eye.tracking.view.FileListActivity" />
     </data>
 
     <LinearLayout
@@ -22,22 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="6"
-            app:visible="@{mainvm.liveVisible}"
             android:baselineAligned="false">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/save_btn"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick ="@{()->mainvm.nextPage(activity)}"
-            android:text="@string/dir_save"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
     </LinearLayout>
 </layout>
